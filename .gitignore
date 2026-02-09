@@ -1,0 +1,124 @@
+# --------------------
+# Python
+# --------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+eggs/
+sdist/
+wheels/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env/
+
+# Install / dependency
+pip-log.txt
+pip-delete-this-directory.txt
+*.manifest
+*.spec
+
+# PyInstaller
+*.exe
+*.dll
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.cache
+.pytest_cache/
+nosetests.xml
+
+# mypy / type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.pyre/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# --------------------
+# IDE / Editors
+# --------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+*.sublime-project
+*.sublime-workspace
+.spyderproject
+.spyproject
+.ropeproject
+
+# --------------------
+# OS
+# --------------------
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# --------------------
+# Credentials / Secrets
+# --------------------
+Creds.txt
+Targets.txt
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+.env
+.env.*
+secrets.*
+credentials.*
+
+# --------------------
+# Logs / Debug
+# --------------------
+*.log
+debug.txt
+logs/
+
+# --------------------
+# oh-my-claudecode / Claude Code
+# --------------------
+.omc/
+.claude/
+
+# --------------------
+# Misc
+# --------------------
+*.bak
+*.tmp
+*.temp
+*.orig
+*.rej

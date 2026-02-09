@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rapids"
+version = "1.0.0"
+description = "Modular credential spraying tool for authorized security testing"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+dependencies = [
+    "rich>=13.7.0",
+    "click>=8.1.7",
+    "requests>=2.31.0",
+    "paramiko>=3.4.0",
+    "impacket>=0.11.0",
+    "pycryptodome>=3.20.0",
+    "pymysql>=1.1.0",
+    "psycopg2-binary>=2.9.9",
+    "redis>=5.0.0",
+    "pymongo>=4.6.0",
+    "pywinrm>=0.4.3",
+    "ldap3>=2.9.1",
+    "pysnmp>=6.0.0",
+    "oracledb>=2.0.0",
+    "paho-mqtt>=2.0.0",
+    "pymemcache>=4.0.0",
+    "cassandra-driver>=3.29.0",
+]
+
+[project.scripts]
+rapids = "rapids:main"
+
+[tool.setuptools.packages.find]
+include = ["core*", "modules*"]
+
+[tool.setuptools]
+py-modules = ["rapids"]

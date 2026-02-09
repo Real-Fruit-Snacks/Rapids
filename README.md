@@ -1,13 +1,12 @@
 <div align="center">
 
-```
-  ____             _     _
- |  _ \ __ _ _ __ (_) __| |___
- | |_) / _` | '_ \| |/ _` / __|
- |  _ < (_| | |_) | | (_| \__ \
- |_| \_\__,_| .__/|_|\__,_|___/
-             |_|
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner.svg">
+  <img alt="Rapids" src="assets/banner.svg" width="800">
+</picture>
+
+<br>
 
 **Modular credential spraying tool for authorized security testing**
 
