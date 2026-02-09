@@ -286,37 +286,35 @@ class ServiceModule(ABC):
 
 ```
 Targets + Credentials + Modules
-        │
-        ▼
-   ┌─────────┐
-   │  Nmap   │ ── auto port/service scan
-   │  Scan   │ ── version detection
-   └────┬────┘
-        │
-        ▼
-   ┌─────────┐
-   │ Domain  │ ── nxc smb domain discovery per host
-   │  Disco  │
-   └────┬────┘
-        │
-        ▼
-   ┌─────────────────┐
-   │  SprayEngine    │ ── ThreadPoolExecutor (10 threads default)
-   │                 │
-   │  Per attempt:   │
-   │  1. Check skip  │ ── host/endpoint unreachable?
-   │  2. Apply timeout│ ── service multiplier (RDP=3x, WinRM=2x)
-   │  3. test_credential()
-   │  4. verify_access() │ ── if --verify and auth succeeded
-   │  5. Track timeouts  │ ── adaptive skip counters
-   └────────┬────────┘
-            │
-            ▼
-   ┌─────────────────┐
-   │  Rich Output    │ ── live progress bar, hit announcements
-   │  Summary Table  │ ── per-host breakdown, valid credentials
-   │  JSON Export    │ ── machine-readable results
-   └─────────────────┘
+        |
+        v
++------------------+
+|    Nmap Scan     |----> auto port/service scan + version detection
++--------+---------+
+         |
+         v
++------------------+
+|  Domain Discov.  |----> nxc smb domain discovery per host
++--------+---------+
+         |
+         v
++----------------------------+
+|       SprayEngine          |----> ThreadPoolExecutor (10 threads)
+|                            |
+|  Per attempt:              |
+|   1. Check skip            |----> host/endpoint unreachable?
+|   2. Apply timeout         |----> service multiplier (RDP=3x, WinRM=2x)
+|   3. test_credential()     |
+|   4. verify_access()       |----> if --verify and auth succeeded
+|   5. Track timeouts        |----> adaptive skip counters
++-------------+--------------+
+              |
+              v
++----------------------------+
+|  Rich Output               |----> live progress bar, hit announcements
+|  Summary Table             |----> per-host breakdown, valid credentials
+|  JSON Export               |----> machine-readable results
++----------------------------+
 ```
 
 ---
